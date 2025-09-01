@@ -6,13 +6,13 @@
 
 Este projeto é uma ferramenta multifuncional desenvolvida em Python que serve tanto como uma calculadora de linha de comando quanto como um plotter para funções matemáticas de uma variável (`x`). O objetivo é fornecer uma interface simples e amigável para realizar cálculos rápidos e visualizar o comportamento de diferentes funções em um gráfico 2D.
 
-Este projeto foi desenvolvido como parte da minha jornada de estudos em Ciência de Dados, aplicando conceitos de lógica de programação, manipulação de strings com Regex e o uso de bibliotecas fundamentais do ecossistema Python.
+Este projeto foi desenvolvido como parte da minha jornada de estudos em Ciência de Dados e como Matemático, aplicando conceitos de lógica de programação, manipulação de strings com Regex e o uso de bibliotecas fundamentais do ecossistema Python.
 
 ## ✨ Funcionalidades Principais
 
 - **Modo Duplo:** Escolha entre usar a ferramenta como uma calculadora para expressões diretas ou como um plotter de gráficos.
 - **Plotter de Funções:** Insira qualquer função de `x` e visualize seu gráfico instantaneamente.
-- **Sintaxe Amigável:** A calculadora é inteligente! Ela aceita:
+- **Sintaxe Amigável:** Ela aceita:
   - `x^2` para potência (convertido para `x**2`).
   - `5x` para multiplicação implícita (convertido para `5*x`).
 - **Avaliação Segura:** Utiliza a biblioteca `numexpr` para calcular as expressões, evitando os riscos de segurança da função `eval()`.
@@ -32,7 +32,7 @@ Para rodar este projeto na sua máquina, siga os passos abaixo:
 1. **Clone o repositório:**
 
    ```bash
-   git clone [https://github.com/Silea-Dev/nome-do-seu-repositorio.git](https://github.com/Silea-Dev/nome-do-seu-repositorio.git)
+   git clone [https://github.com/Silea-Dev/mini-geogebra.git](https://github.com/Silea-Dev/mini-geogebra.git)
    cd nome-do-seu-repositorio
    ```
 2. **Crie um ambiente virtual (Recomendado):**
@@ -62,5 +62,3 @@ Para rodar este projeto na sua máquina, siga os passos abaixo:
 ## 📜 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-**(INSTRUÇÃO: O GitHub tem uma função para adicionar uma licença. Ao criar um arquivo, digite `LICENSE` como nome e ele te dará a opção de escolher um modelo. A licença "MIT" é a mais comum e simples para projetos de portfólio.)**
