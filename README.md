@@ -1,7 +1,5 @@
 # 📈 Mini-GeoGebra: Calculadora e Plotter de Funções
 
-**(INSTRUÇÃO: Tire um screenshot do seu programa rodando e mostrando um gráfico bonito, por exemplo, de `x^2` ou `sin(x)`. Salve a imagem como `screenshot.png` na mesma pasta do projeto. A linha abaixo vai mostrar a imagem aqui.)**
-
 ![Screenshot do Mini-GeoGebra em ação](screenshot.png)
 
 ## 📄 Descrição
