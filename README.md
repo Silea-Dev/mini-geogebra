@@ -43,7 +43,6 @@ To run this project on your local machine, follow the steps below:
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 3. **Install the dependencies:**
-   
 
    ```bash
    pip install -r requirements.txt
