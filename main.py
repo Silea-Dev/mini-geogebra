@@ -24,7 +24,7 @@ while True:
             break
 
         print(f"Generating graph for function y = {formula_string}...")
-        x = np.linspace(-100, 100, 1000)
+        x = np.linspace(-10, 10, 500)
 
         try:
             formatted_formula = prepare_expression(formula_string)
