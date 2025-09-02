@@ -13,13 +13,13 @@ def preparar_formula(formula_str):
 
 
 while True:
-    escolha = input("Deseja o gráfico? [S/N]: ")
-    if escolha.lower() == "sair" or not escolha:
+    choice = input("Plot a grafic? [Y/N]: ")
+    if choice.lower() == "sair" or not choice:
         print("Fim do programa!")
         break
-    elif escolha.lower() == "s" or escolha.lower() == "sim":
-        formula_str = input("Digite a Lei da Função que use 'x' como variável [sair]: ")
-        if formula_str.lower() == "sair" or not formula_str:
+    elif choice.lower() == "y" or choice.lower() == "yes":
+        formula_str = input("Digite a Lei da Função que use 'x' como variável [exit]: ")
+        if formula_str.lower() == "exit" or not formula_str:
             print("Fim do programa!")
             break
         else:
@@ -38,16 +38,16 @@ while True:
             plt.grid(True)
             plt.show()
 
-    elif escolha.lower() == "n" or escolha.lower() == "nao":
-        print("[ALERT]Digite as suas constantes!: ")
+    elif choice.lower() == "n" or choice.lower() == "no":
+        print("[ALERT] Digite as suas constantes!: ")
         conta_str = input("Calculadora: ")
         try:
             calculo = ne.evaluate(conta_str)
-            print(f"Resultado: {calculo}")
+            print(f"Result: {calculo}")
         except Exception as e:
             print("[ERROR] Cuidado ao digitar suas constantes!")
             continue
 
     else:
-        print("[ERROR] Faça uma escolha!")
+        print("[ERROR] Faça uma choice!")
         continue
