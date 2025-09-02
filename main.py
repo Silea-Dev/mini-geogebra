@@ -35,6 +35,8 @@ while True:
             plt.xlabel("X-axis")
             plt.ylabel("Y-axis")
             plt.grid(True)
+            plt.xlim(-10, 10)
+            plt.ylim(-10, 10)
             plt.show()
 
         except Exception as e:
