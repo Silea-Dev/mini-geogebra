@@ -1,6 +1,6 @@
 [project]
 name = "mini_geogebra" 
-version = "0.1.0"
+version = "2.0"
 
 [build-system]
 requires = ["setuptools>=61.0"]
