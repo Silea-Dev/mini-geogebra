@@ -9,3 +9,20 @@ venv/
 
 teste/
 ambiente.py
+
+env/
+.env/
+
+*.pyc
+*.pyo
+*.pyd
+
+build/
+dist/
+*.egg-info/
+
+.pytest_cache/
+.coverage
+
+.DS_Store
+Thumbs.db
