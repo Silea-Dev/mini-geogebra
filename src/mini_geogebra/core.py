@@ -47,7 +47,7 @@ class Calculadora:
 def iniciar():
     chama = Calculadora()
     while True:
-        escolha = input("\nPlot a graph[Y/N] | exit[ex]: ")
+        escolha = input("[MENU]:\nPlot a graph[Y] | Calculator[N]| | exit[ex]: ")
 
         if escolha.lower() == "ex":
             print("End.")
@@ -55,19 +55,33 @@ def iniciar():
             break
 
         elif escolha.lower() in ["y", "yes"]:
-            formula_str = input("Enter a function using 'x' as the variable [exit]: ")
-            formula_plot = chama.data_graph(formula_str)
+            print("Enter a function using 'x' as the variable | menu[back]: ")
+            while True:
+                formula_str = input("\nGraph: ")
 
-            if formula_plot is not None:
-                formula_final = chama.prepare_expression(formula_str)
-                chama.plot_graph(formula_final)
+                if formula_str.lower() == "back":
+                    print("BACK MENU\n")
+                    break
+
+                formula_plot = chama.data_graph(formula_str)
+
+                if formula_plot is not None:
+                    formula_final = chama.prepare_expression(formula_str)
+                    chama.plot_graph(formula_final)
 
         elif escolha.lower() in ["n", "no"]:
-            expressao_str = input("Calculator: Enter an expression to evaluate: ")
-            result_expression = chama.data_expression(expressao_str)
+            print("Calculator: Enter an expression to evaluate | menu[back]: ")
+            while True:
+                expressao_str = input("Expression: ")
 
-            if result_expression is not None:
-                print(f"Result: {result_expression}")
+                if expressao_str.lower() == "back":
+                    print("BACK MENU\n")
+                    break
+
+                result_expression = chama.data_expression(expressao_str)
+
+                if result_expression is not None:
+                    print(f"Result: {result_expression}\n")
 
         else:
             print("[ERROR] Choise Y or N.")
