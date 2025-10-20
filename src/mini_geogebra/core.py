@@ -1,46 +1,73 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import numexpr as ne
+import numpy as np
 import re
+import os
 
 
-def prepare_expression(expression_str):
-    step_1 = expression_str.replace("^", "**")
-    step_2 = re.sub(r"(\d)(x)", r"\1*\2", step_1)
-    final_expression = step_2.replace(" ", "")
-    return final_expression
+class Calculadora:
+
+    def prepare_expression(self, expressao):
+        step_1 = expressao.replace("^", "**")
+        step_2 = re.sub(r"(\d)(x)", r"\1*\2", step_1)
+        expressao_final = step_2.replace(" ", "")
+        return expressao_final
+
+    def plot_graph(self, expressao):
+        x = np.linspace(-10, 10, 500)
+
+        try:
+            formatar_formula = self.prepare_expression(expressao)
+            y = ne.evaluate(formatar_formula)
+            plt.plot(x, y)
+            plt.title(f"Graph of Y = {expressao}")
+            plt.xlabel("X-axis")
+            plt.ylabel("Y-axis")
+            plt.grid(True)
+            plt.xlim(-10, 10)
+            plt.ylim(-10, 10)
+            plt.show()
+            return True
+        except Exception:
+            return False
+
+    def data_graph(self, formula_str):
+        if not formula_str:
+            return None
+        return formula_str
+
+    def data_expression(self, expressao):
+        try:
+            result = ne.evaluate(self.prepare_expression(expressao))
+            return result
+        except Exception as e:
+            return None
 
 
-def plot_graph(formula_str):
-    x = np.linspace(-10, 10, 500)
+def iniciar():
+    chama = Calculadora()
+    while True:
+        escolha = input("\nPlot a graph[Y/N] | exit[ex]: ")
 
-    try:
-        formatted_formula = prepare_expression(formula_str)
-        y = ne.evaluate(formatted_formula)
-        plt.plot(x, y)
-        plt.title(f"Graph of Y = {formula_str}")
-        plt.xlabel("X-axis")
-        plt.ylabel("Y-axis")
-        plt.grid(True)
-        plt.xlim(-10, 10)
-        plt.ylim(-10, 10)
-        plt.show()
-        return True
-    except Exception:
-        return False
+        if escolha.lower() == "ex":
+            print("End.")
+            # os.system("cls")
+            break
 
+        elif escolha.lower() in ["y", "yes"]:
+            formula_str = input("Enter a function using 'x' as the variable [exit]: ")
+            formula_plot = chama.data_graph(formula_str)
 
-def data_graph():
-    formula_str = input("Enter a function using 'x' as the variable [exit]: ")
-    if not formula_str:
-        return None
-    return formula_str
+            if formula_plot is not None:
+                formula_final = chama.prepare_expression(formula_str)
+                chama.plot_graph(formula_final)
 
+        elif escolha.lower() in ["n", "no"]:
+            expressao_str = input("Calculator: Enter an expression to evaluate: ")
+            result_expression = chama.data_expression(expressao_str)
 
-def data_expression():
-    expression_str = input("Calculator: Enter an expression to evaluate: ")
-    try:
-        result = ne.evaluate(prepare_expression(expression_str))
-        return result
-    except Exception as e:
-        return None
+            if result_expression is not None:
+                print(f"Result: {result_expression}")
+
+        else:
+            print("[ERROR] Choise Y or N.")
