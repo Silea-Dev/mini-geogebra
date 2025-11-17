@@ -39,3 +39,6 @@ O aspecto mais crítico deste projeto é sua evolução arquitetural.
    ```bash
    git clone [https://github.com/Silea-Dev/mini-geogebra.git](https://github.com/Silea-Dev/mini-geogebra.git)
    cd mini-geogebra
+
+## **Atualizações:**
+   Irei reescrever em Java, para testar as diferentes possibilidades para a aplicação!
