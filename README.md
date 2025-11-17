@@ -1,63 +1,41 @@
-# Mini-GeoGebra: Calculator and Function Plotter
+# Mini-GeoGebra: Calculadora e Plotador de Funções
 
-![Mini-GeoGebra in action](screenshot.png)
+![Mini-GeoGebra em ação](screenshot.png)
 
-## Description
+## 🚀 Visão Geral
 
-This project is a multi-purpose tool developed in Python that serves as both a command-line calculator and a plotter for single-variable mathematical functions (`x`). The goal is to provide a simple and user-friendly interface to perform quick calculations and visualize the behavior of different functions on a 2D graph.
+Este projeto é uma ferramenta desenvolvida em Python que atua tanto como uma calculadora de linha de comando quanto como um plotador gráfico para funções de variável única (`x`).
 
-This project was developed as part of my learning journey in Data Science and as a Mathematician, applying concepts of programming logic, string manipulation with Regex, and the use of fundamental libraries from the Python ecosystem.
+Mais do que apenas uma calculadora, **este projeto representa a interseção entre o Rigor Matemático e a Engenharia de Software**. Ele foi projetado para aplicar conceitos robustos de programação — como **Programação Orientada a Objetos (POO)** e **Clean Code** — para resolver um problema clássico de visualização matemática.
 
-## Key Features
+## ⚙️ Arquitetura & Refatoração
 
-- **Dual Mode:** Choose between using the tool as a direct expression calculator or as a function plotter.
-- **Function Plotter:** Enter any function of `x` and instantly visualize its graph.
-- **User-Friendly Syntax:** The parser accepts common shortcuts:
-  - `x^2` for exponents (is converted to `x**2`).
-  - `5x` for implicit multiplication (is converted to `5*x`).
-- **Safe Evaluation:** Uses the `numexpr` library to evaluate expressions, avoiding the security risks of the `eval()` function.
+O aspecto mais crítico deste projeto é sua evolução arquitetural.
 
-## Tech Stack
+* **v1.0 (Procedural):** Inicialmente escrito como um script monolítico procedural. Embora funcional, era difícil de manter e escalar.
+* **v2.0 (POO - Atual):** Toda a base de código foi refatorada utilizando **Programação Orientada a Objetos**.
+    * **Desacoplamento:** A lógica matemática está separada da interface de usuário e entrada de dados.
+    * **Extensibilidade:** Adicionar novas operações matemáticas ou trocar a biblioteca de plotagem gera atrito mínimo devido ao design modular das classes.
+    * **Avaliação Segura:** Implementação de sanitização rigorosa de inputs para prevenir injeção de código.
 
-- **Python**
-- **NumPy:** For array generation and numerical computations.
-- **Matplotlib:** For data visualization and plotting.
-- **NumExpr:** For the safe evaluation of mathematical expressions.
-- **Regex (`re` module):** For preprocessing and correcting user-input formulas.
+## Principais Funcionalidades
 
-## How to Run This Project
+- **Modo Duplo:** Alternância fluida entre calculadora de expressões diretas e plotador de gráficos de funções.
+- **Parsing Inteligente:** Sintaxe amigável processada via Regex:
+  - `x^2` é convertido automaticamente para `x**2` (padrão Python).
+  - `5x` (multiplicação implícita) é convertido automaticamente para `5*x`.
+- **Security First (Segurança):** Utiliza a biblioteca `numexpr` para avaliação em vez da perigosa função `eval()`, garantindo que inputs matemáticos não possam executar códigos arbitrários no sistema.
 
-To run this project on your local machine, follow the steps below:
+## 🛠️ Tech Stack
 
-1. **Clone the repository:**
+- **Core:** Python 3.x (Abordagem POO)
+- **Matemática:** NumPy (Vetorização & Geração de Arrays)
+- **Visualização:** Matplotlib
+- **Segurança & Parsing:** NumExpr, RegEx (`re`)
 
+## Como Rodar o Projeto
+
+1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/Silea-Dev/mini-geogebra.git](https://github.com/Silea-Dev/mini-geogebra.git)
    cd mini-geogebra
-   ```
-2. **Create a virtual environment (Recommended):**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. **Install the dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. **Run the program:**
-
-   ```bash
-   python main.py
-   ```
-
-## Roadmap
-
-- [ ] **v2.0:** Implement the plotting of multiple functions on the same graph.
-- [ ] Add more graph customization options (colors, line styles).
-- [ ] Allow the user to define the `x` range to be plotted.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
